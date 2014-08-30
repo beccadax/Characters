@@ -24,7 +24,7 @@ the string it belongs to:
 
     var str = "Hello, world!"
     str.characters[0]                                           // "H"
-    str.characters.replaceRange(6...11, with: "Swift")
+    str.characters.replaceRange(7...11, with: "Swift")
     str                                                         // "Hello, Swift!"
 
 You can also just construct `Characters` instances like any other 
