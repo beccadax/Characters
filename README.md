@@ -10,6 +10,10 @@ interface as a `String`, except all the indices are `Int`s instead of
 `String.Index`es. That means every index is an `Int` and every range is a 
 `Range<Int>`.
 
+
+(Well, there's one other difference: `Characters` does not toll-free bridge to 
+`NSString`. Sorry.)
+
 The simplest way to get a `Characters` instance is through `String`'s new 
 `characters` property:
 
@@ -24,26 +28,27 @@ the underlying string:
     str.characters[12] = "!"
     println(str)            // Hello, world!
 
-You can also just construct `Characters` objects like any other object, or by using 
-a string literal.
+You can also just construct `Characters` instances like any other type, or by using 
+a string literal anywhere Swift expects a `Characters` instance.
 
 Implementation
 -----------
 
 A `Characters` instance contains a `String` instance with the text, plus an array
-mapping `Int` indices to `String.Index`es. The index array is lazily computed, so 
+mapping `Int` indices to `String.Index`es. This index cache is lazily computed, so 
 it's stored in a separate object so it can be modified even if the `Characters` is
-constant. It also uses a dispatch queue to serialize access, ensuring the class is 
-threadsafe (or at least as threadsafe as `String` is).
+constant. It also uses a dispatch queue to serialize access, ensuring `Characters` 
+is threadsafe (or at least as threadsafe as `String` is).
+
+Though the cache should help, it's extremely likely that indexing a `Characters` will
+be slower than indexing a `String`. That's why `String` is designed the way it is.
+You're getting what you asked for when you use `Characters`.
 
 The framework also contains a `StringType` protocol which specifies the entire 
 interface of `String` in an index-type-independent way. However, due to what 
 seems to be a Swift compiler bug, I can't get `String` to conform to this protocol.
 Nevertheless, `Characters` and `String` do have identical interfaces except for the 
 types of the indices and ranges.
-
-(Well, there's one other difference: `Characters` does not toll-free bridge to 
-`NSString`. Sorry.)
 
 Author
 -----
