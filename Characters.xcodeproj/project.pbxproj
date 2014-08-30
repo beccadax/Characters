@@ -25,7 +25,6 @@
 		84A0614F19B1D54F00C46397 /* Characters+StringInterpolationConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0614E19B1D54F00C46397 /* Characters+StringInterpolationConvertible.swift */; };
 		84A0615119B1D82A00C46397 /* Characters+RangeReplaceableCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0615019B1D82A00C46397 /* Characters+RangeReplaceableCollectionType.swift */; };
 		84A0615319B1DA4100C46397 /* SharedQueued.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0615219B1DA4100C46397 /* SharedQueued.swift */; };
-		84A0615519B218D500C46397 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 84A0615419B218D500C46397 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +51,7 @@
 		84A0615019B1D82A00C46397 /* Characters+RangeReplaceableCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Characters+RangeReplaceableCollectionType.swift"; sourceTree = "<group>"; };
 		84A0615219B1DA4100C46397 /* SharedQueued.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedQueued.swift; sourceTree = "<group>"; };
 		84A0615419B218D500C46397 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		84A0615919B28A1000C46397 /* README.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = README.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				84A0615419B218D500C46397 /* README.md */,
+				84A0615919B28A1000C46397 /* README.playground */,
 				84A0611D19B1CD3600C46397 /* Characters */,
 				84A0612719B1CD3600C46397 /* CharactersTests */,
 				84A0611C19B1CD3600C46397 /* Products */,
@@ -258,7 +259,6 @@
 				84A0613719B1CD8000C46397 /* Characters.swift in Sources */,
 				84A0615119B1D82A00C46397 /* Characters+RangeReplaceableCollectionType.swift in Sources */,
 				84A0614719B1D2E400C46397 /* Characters+Reflectable.swift in Sources */,
-				84A0615519B218D500C46397 /* README.md in Sources */,
 				84A0614519B1D29D00C46397 /* Characters+OutputStreamType.swift in Sources */,
 				84A0614F19B1D54F00C46397 /* Characters+StringInterpolationConvertible.swift in Sources */,
 				84A0614919B1D38700C46397 /* Characters+Sliceable.swift in Sources */,
@@ -449,6 +449,7 @@
 				84A0613019B1CD3600C46397 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84A0613119B1CD3600C46397 /* Build configuration list for PBXNativeTarget "CharactersTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +458,7 @@
 				84A0613319B1CD3600C46397 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

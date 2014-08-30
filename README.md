@@ -1,35 +1,37 @@
 Characters.framework
 ================
+    
+`Characters` is a Swift string type with integer-based indexing.
+It has the same interface as a `String`, except all the indices 
+are `Int`s instead of `String.Index`es. That means every index is 
+an `Int` and every range is a `Range<Int>`.
 
-**Important Note:** This code has literally **never been run**, largely because 
-Beta 6 crashes constantly when I'm in a file with an XCTestCase. Consider it a 
-proof of concept.
+(Well, there's one other difference: `Characters` does not toll-
+free bridge to `NSString`. Sorry.)
 
-`Characters` is a Swift string type with integer-based indexing. It has the same 
-interface as a `String`, except all the indices are `Int`s instead of 
-`String.Index`es. That means every index is an `Int` and every range is a 
-`Range<Int>`.
+The simplest way to get a `Characters` instance is through 
+`String`'s new `characters` property:
 
+    import Characters
+    
+    var chars = "Hello, world!".characters                      // "Hello, world!"
+    chars[0]                                                    // "H"
+    chars.replaceRange(7...11, with: "Swift")
+    chars                                                       // "Hello, Swift!"
 
-(Well, there's one other difference: `Characters` does not toll-free bridge to 
-`NSString`. Sorry.)
+You can manipulate the `characters` property directly to change 
+the string it belongs to:
 
-The simplest way to get a `Characters` instance is through `String`'s new 
-`characters` property:
+    var str = "Hello, world!"
+    str.characters[0]                                           // "H"
+    str.characters.replaceRange(6...11, with: "Swift")
+    str                                                         // "Hello, Swift!"
 
-    let chars = "Hello, world?".characters
-    chars[12] = "!"
-    println(chars.string)           // Hello, world!
+You can also just construct `Characters` instances like any other 
+type, or by using a string literal anywhere Swift expects a 
+`Characters` instance.
 
-You should also be able to manipulate the `characters` property directly to change 
-the underlying string:
-
-    var str = "Hello, world?"
-    str.characters[12] = "!"
-    println(str)            // Hello, world!
-
-You can also just construct `Characters` instances like any other type, or by using 
-a string literal anywhere Swift expects a `Characters` instance.
+    let moreChars: Characters = "Hello, Swift!"
 
 Implementation
 -----------
